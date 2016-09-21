@@ -1,0 +1,71 @@
+.toast-notification {
+  color: white;
+  position: fixed;
+  width: 50%;
+  margin: 0 auto;
+  right: 0px;
+  top: -100px;
+  left: 0px;
+  textAlign: center;
+  zIndex: 999;
+  pointerEvents: none;
+  transition: 'all ' + animationDuration + 'ms ease',
+  transform: 'translateY(0px)',
+  // Vendor Prefixes
+  msTransition: 'all ' + animationDuration + 'ms ease',
+  msTransform: 'translateY(0px)',
+  WebkitTransition: 'all ' + animationDuration + 'ms ease',
+  WebkitTransform: 'translateY(0px)',
+  OTransition: 'all ' + animationDuration + 'ms ease',
+  OTransform: 'translateY(0px)',
+  MozTransition: 'all ' + animationDuration + 'ms ease',
+  MozTransform: 'translateY(0px)'
+}
+
+.toast-notification > * {
+  cursor: pointer;
+  display: inline;
+  width: auto;
+  borderRadius: 0 0 4px 4px;
+  background: white;
+  padding: 10px 30px;
+  pointerEvents: all;
+}
+
+.type-error {
+  background: #E85742;
+}
+
+.type-success {
+  background: #55CA92;
+}
+
+.type-warning {
+  color: #333333;
+  background: #F5E273;
+}
+
+.type-info {}
+
+.show {
+  transform: translateY(108px);
+  msTransform: translateY(108px);
+  WebkitTransform: translateY(108px);
+  OTransform: translateY(108px);
+  MozTransform: translateY(108px);
+}
+
+.hide {
+  transform: translateY(0px);
+  msTransform: translateY(0px);
+  WebkitTransform: translateY(0px);
+  OTransform: translateY(0px);
+  MozTransform: translateY(0px);	
+}
+
+.gravity-top {}
+.gravity-bottom {}
+.gravity-left {}
+.gravity-right {}
+.gravity-center-x {}
+.gravity-center-y {}
