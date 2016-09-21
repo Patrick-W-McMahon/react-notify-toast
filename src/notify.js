@@ -14,12 +14,14 @@ const TOAST_TYPE = {
 };
 
 /* gravity types */
-const GRAVITY_TOP = "";
-const GRAVITY_BOTTOM = "";
-const GRAVITY_LEFT = "";
-const GRAVITY_RIGHT = "";
-const GRAVITY_CENTER_X = "";
-const GRAVITY_CENTER_Y = "";
+const GRAVITY = {
+	top:'top',
+	bottom:'bottom',
+	left:'left',
+	right:'right',
+	center_x:'centerx',
+	center_y:'centery'
+};
 
 class Toast {
 	constructor(text, type duration = 5000, timeout = 300 ) { // duration & timeout in ms
