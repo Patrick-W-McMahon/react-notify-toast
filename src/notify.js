@@ -1,6 +1,7 @@
 import React, {PropTypes} from 'react';
 import ReactDOM from 'react-dom';
 import assign from 'object-assign';
+import styles from './toast_style';
 
 let notificationWrapperId = 'notification-wrapper';
 let defaultTimeout = 5000; // ms
@@ -175,9 +176,8 @@ class Toast extends React.Component {
 	render() {
 		let {text, type} = this.props;
 		let styles = this.getStyles();
-		let {styleParent} = this.state;
 		return (
-			<div className="toast-notification" style={styleParent}>
+			<div className={`toast-notification type-${type}`}>
 				<span className={type} style={styles.content}>{text}</span>
 			</div>
 		);
