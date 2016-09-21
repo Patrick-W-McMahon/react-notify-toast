@@ -7,12 +7,31 @@ let defaultTimeout = 5000; // ms
 let animationDuration = 300; // ms
 
 /* Colors */
+const BG_COLOR = {
+	error:'#E85742',
+	success:'#55CA92',
+	warning:'#F5E273'
+};
+const FONT_COLOR = {
+	error:'white',
+	success:'white',
+	warning:'#333333'
+};
 const colorWhite = 'white';
 const colorError = '#E85742';
 const colorSuccess = '#55CA92';
 const colorWarning = '#F5E273';
 const textColorWarning = '#333333';
 
+/* toast message types */
+const TOAST_TYPE = {
+	error:'error',
+	success:'success',
+	warning:'warning',
+	info:'info'
+};
+
+/* gravity types */
 const GRAVITY_TOP = "";
 const GRAVITY_BOTTOM = "";
 const GRAVITY_LEFT = "";
@@ -74,7 +93,7 @@ class Toast extends React.Component {
 
 		/* If type is set, merge toast action styles with base */
 		switch (this.props.type) {
-			case 'success':
+			case TOAST_TYPE.success:
 				const successStyle = {
 					backgroundColor: colorSuccess,
 					color: colorWhite
@@ -82,7 +101,7 @@ class Toast extends React.Component {
 				styles.content = assign({}, contentStyle, successStyle);
 				break;
 
-			case 'error':
+			case TOAST_TYPE.error:
 				const errorStyle = {
 					backgroundColor: colorError,
 					color: colorWhite
@@ -90,14 +109,14 @@ class Toast extends React.Component {
 				styles.content = assign({}, contentStyle, errorStyle);
 				break;
 
-			case 'warning':
+			case TOAST_TYPE.warning:
 				const warningStyle = {
 					backgroundColor: colorWarning,
 					color: textColorWarning
 				};
 				styles.content = assign({}, contentStyle, warningStyle);
 				break;
-			case 'info':
+			case TOAST_TYPE.info:
 			default:
 				styles.content = assign({}, contentStyle);
 				break;
