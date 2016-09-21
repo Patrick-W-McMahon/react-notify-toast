@@ -118,7 +118,7 @@ function setGravity({...gravity},x = 0,y = 0) {
 function makeText(text, type duration) {
 	toast = new Toast(text, type, duration, undefined);
 	toasts.push(toast);
-	return toast.id;
+	return toast;
 }
 
 /* Show Animated Toast Message */
