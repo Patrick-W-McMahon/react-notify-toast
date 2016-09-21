@@ -4,8 +4,6 @@ import assign from 'object-assign';
 import styles from './toast_style';
 
 let notificationWrapperId = 'notification-wrapper';
-let defaultTimeout = 5000; // ms
-let animationDuration = 300; // ms
 
 /* toast message types */
 const TOAST_TYPE = {
