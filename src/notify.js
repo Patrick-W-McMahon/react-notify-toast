@@ -24,7 +24,7 @@ const GRAVITY = {
 };
 
 class Toast {
-	constructor(text, type duration = 5000, timeout = 300 ) { // duration & timeout in ms
+	constructor(context, text, type duration = 5000, timeout = 300 ) { // duration & timeout in ms
 		this.id = `${new Date(milliseconds)*Math.random()}${Math.random()}`;
 		this.text = text;
 		this.type = type;
@@ -116,7 +116,8 @@ function setGravity({...gravity},x = 0,y = 0) {
 }
 
 function makeText(text, type duration) {
-	toast = new Toast(text, type, duration, undefined);
+	let context = document.getElementById(notificationWrapperId);
+	toast = new Toast(context, text, type, duration, undefined);
 	toasts.push(toast);
 	return toast;
 }
