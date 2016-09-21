@@ -13,6 +13,13 @@ const colorSuccess = '#55CA92';
 const colorWarning = '#F5E273';
 const textColorWarning = '#333333';
 
+const GRAVITY_TOP = "";
+const GRAVITY_BOTTOM = "";
+const GRAVITY_LEFT = "";
+const GRAVITY_RIGHT = "";
+const GRAVITY_CENTER_X = "";
+const GRAVITY_CENTER_Y = "";
+
 /* React Notification Component */
 class Toast extends React.Component {
 	static propTypes = {
@@ -90,14 +97,12 @@ class Toast extends React.Component {
 				};
 				styles.content = assign({}, contentStyle, warningStyle);
 				break;
-
+			case 'info':
 			default:
 				styles.content = assign({}, contentStyle);
 				break;
 		}
-
 		styles.container = containerStyle;
-
 		return styles;
 	}
 
@@ -176,6 +181,11 @@ function hideToast() {
 }
 
 /* Public functions */
+
+/* set gravity of Toast Message */
+function setGravity({...gravity},x = 0,y = 0) {
+	
+}
 
 /* Show Animated Toast Message */
 function show(text, type, timeout) {
